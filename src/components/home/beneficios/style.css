@@ -1,0 +1,26 @@
+.benefits {
+
+    background-color: #f2f2f2;
+    color: #606c38;
+    display: flex;
+    padding: 5rem 10rem;
+    gap: 2.31rem;
+
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+}
+
+.benefit p {
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }

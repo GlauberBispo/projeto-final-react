@@ -4,7 +4,7 @@
     gap: 1rem;
     height: 60vh;
     padding: 2.5rem 10rem;
-    background-color: #606c38;
+    background-color: var(--secondary-green);
   }
   
   .big-hero-img-btn > img {
@@ -13,7 +13,7 @@
   }
   
   .big-hero-text {
-    color: #f2f2f2;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
   }
   
   .big-hero-text h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   
   .big-hero-text p {
@@ -41,8 +41,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #f2f2f2;
-    background-color: #bc6c25;
+    color: var(--white);
+    background-color: var(--emphases-color);
     border-radius: 12px;
     padding: 0.93rem 1.12rem;
     box-sizing: border-box;
