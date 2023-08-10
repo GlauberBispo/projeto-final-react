@@ -1,0 +1,17 @@
+:root {
+  --primary-green: #606C38;
+  --secondary-green: #283618;
+  --hover-emphasis-color: #DDA15E;
+  --emphasis-color: #BC6C25;
+  --white: #F2F2F2;
+  --black: #1D1D1D;
+  --error: #952D2D;
+}
+
+
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'inter', sans-serif;
+}
