@@ -21,9 +21,9 @@ export default function BigHero() {
         <div className="big-hero-img-btn">
           <img src={ecoimg} alt="mão segurando um eco copo" />
           <button type="button" className="btn-custom">
-            <span>Conheça nossos produtos</span>
+            <span>concnheça nossos produtos</span>
             <img src={cursorclick} alt="cursor click" />
-          </button>
+            </button>          
         </div>
       </div>
     </div>

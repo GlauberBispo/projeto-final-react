@@ -1,5 +1,5 @@
 .container-big-hero {
-  height: 80vh;
+  height: 90vh;
   background-color: var(--primary-green);
 }
 
@@ -9,7 +9,7 @@
     gap: 1rem;
     height: 100vh;
     padding: 2.5rem 10rem;
-    background-color: var(--secondary-green);
+    background-color: var(--primary-green);
   }
 
   
@@ -42,16 +42,17 @@
     justify-content: center;
     gap: 2rem;
   }
-  
-  .btn-custom {
+
+    .btn-custom {
     all: unset;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--white);
-    background-color: var(--emphases-color);
+    background-color: var(--emphasis-color);
     border-radius: 12px;
     padding: 0.93rem 1.12rem;
     box-sizing: border-box;
     margin: 0 auto;
+    cursor: pointer;
   }
