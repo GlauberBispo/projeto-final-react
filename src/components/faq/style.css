@@ -1,0 +1,24 @@
+.FAQ {
+    padding: 4rem 2.81rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+  }
+  
+  .FAQ h1 {
+    color: var(--primary-color);
+  }
+
+.custom-accordion-button:hover {
+    box-shadow: none;
+  }
+  
+  .custom-accordion-button {
+    box-shadow: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #d2d8be;
+    color: var(--secondary-color);
+  }
