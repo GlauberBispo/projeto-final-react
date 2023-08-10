@@ -1,13 +1,12 @@
 import "./style.css";
 import ecoimg from "../../assets/eco-cup-pic-desktop.jpg";
 import cursorclick from "../../assets/CursorClick.svg";
-import React from "react";
 
 
 
 export default function BigHero() {
   return (
-    <>
+    <div className="container-big-hero">
       <div className="big-hero-container">
         <div className="big-hero-text">
           <h1>Faça a diferença com a EcoViva!</h1>
@@ -27,6 +26,6 @@ export default function BigHero() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
