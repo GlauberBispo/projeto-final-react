@@ -1,0 +1,25 @@
+.container-depo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3.3rem 9.5rem 4.8rem;
+    background-color: var(--primary-green);
+    gap: 3rem;
+}
+
+.container-depo img {
+    width: 10.75rem;
+    height: 10.75rem;
+}
+
+.depoiment {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--white);
+}
+
+.depoiment img {
+    width: 8rem;
+    height: 2rem;
+}
