@@ -1,0 +1,76 @@
+.card-img-top {
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card i:hover {
+  color: var(--primary-green);
+}
+
+.card-title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.card-body img {
+  width: 30%;
+}
+
+.tag {
+    margin-bottom: 1rem;
+}
+
+.preco-favorito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preco-favorito span:nth-child(1) {
+  font-size: 1.125rem;
+}
+
+.preco-favorito img {
+  font-size: 2rem;
+}
+
+.button-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.8rem;
+}
+
+.btn-add {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--secondary-green) ;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: var(--primary-green);
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--secondary-green);
+}
+
