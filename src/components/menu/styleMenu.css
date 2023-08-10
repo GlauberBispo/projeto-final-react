@@ -1,0 +1,27 @@
+.linkMenuPrincipal{
+    gap: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkMenuPrincipal a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+}
+
+a.btnCustom{
+    background-color: var(--emphasis-color);
+    padding: 0.93rem 1.12rem;
+    border-radius: 12px;
+    transition: all 0.5s;
+    animation: fade-in 1s ease-in;
+    font-weight: 400;
+    font-size: 1.12rem;
+    margin: auto;
+}
+
+a.btnCustom:hover{
+    background-color: var(--hover-emphasis-color);
+}
