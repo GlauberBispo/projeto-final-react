@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/footer';
 import Header from './components/header';
-import Menu from './components/menu';
+import MenuAreaLogada from './components/menuAreaLogada';
 
 function App() {
   return (
   <>
   <BrowserRouter>
   <Header>
-    <Menu/>
+    <MenuAreaLogada/>
   </Header>
   <Routes>
     <Route path='/' element=''/>

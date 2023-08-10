@@ -1,0 +1,25 @@
+.linkMenuPrincipal{
+    gap: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkMenuPrincipal a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+}
+
+a.btnSimple{
+    transition: all 0.5s;
+    animation: fade-in 1s ease-in;
+}
+
+a.btnSimple:hover{
+    color: var(--emphasis-color);
+}
+
+.btnSimple i{
+    font-size: 2rem;
+}
