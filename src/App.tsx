@@ -3,7 +3,7 @@ import Footer from './components/footer';
 import Header from './components/header';
 import MenuAreaLogada from './components/menuAreaLogada';
 import Home from './pages/home';
-import React from 'react';
+import Contato from './pages/contato';
 
 function App() {
   return (
@@ -13,9 +13,12 @@ function App() {
     <MenuAreaLogada/>
   </Header>
   <Routes>
-    <Route path='/' element=''/>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/Contato' element={<Contato/>}/>
+    {/* <Route path='/' element={<Home/>}/>
+    <Route path='/' element={<Home/>}/> */}
   </Routes>
-    <Home />
+  
     <Footer />
   </BrowserRouter>
   
