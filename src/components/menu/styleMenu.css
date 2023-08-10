@@ -25,3 +25,12 @@ a.btnCustom{
 a.btnCustom:hover{
     background-color: var(--hover-emphasis-color);
 }
+
+a.btnSimple{
+    transition: all 0.5s;
+    animation: fade-in 1s ease-in;
+}
+
+a.btnSimple:hover{
+    color: var(--emphasis-color);
+}
