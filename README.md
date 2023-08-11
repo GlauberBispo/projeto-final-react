@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Projeto final React
+
+Link vercel [Clique Aqui](https://projeto-final-react-amber.vercel.app/)
+
+Link Trello [Clique Aqui](https://trello.com/b/mi7MUTdB/ecoviva-react)
+
+## Pendências
+
+* Concluir finalização de compra;
+* Conectar API Text to Voice no FAQ;
+* Melhorar lógica para coleta das informações dos formulários para login e navegação entre as páginas como usuário logado
+* Refinamento na estiização dos componentes.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
