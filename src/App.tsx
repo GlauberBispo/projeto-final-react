@@ -10,14 +10,9 @@ import Menu from './components/menu';
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   return (
   <>
   <BrowserRouter>
-  <Header>
-    <Menu isLoggedIn={isLoggedIn}/>
-  </Header>
   <Routes>
     <Route path='/' element={<Home/>}/>
     <Route path='/contato' element={<Contato/>}/>

@@ -4,6 +4,8 @@ import { data } from "../../data";
 import Card from "../../components/card";
 import Avaliacao from "../../components/avaliacao";
 import Frete from "../../components/frete";
+import Header from "../../components/header";
+import Menu from "../../components/menu";
 
 interface Produto {
   imageUrl: string;
@@ -18,6 +20,7 @@ interface Categoria {
 }
 
 export default function Produtos() {
+
   const categorias: Categoria[] = data;
   const [categoriaSelecionada, setCategoriaSelecionada] = useState<string>("");
   const [filtro, setFiltro] = useState<string>("");
@@ -118,6 +121,9 @@ export default function Produtos() {
 
   return (
     <>
+     <Header>
+      <Menu/>
+    </Header>
       <div className="container-home">
         <aside className="categorias">
           <h2 onClick={handleTodosProdutosClick}>Categorias</h2>
