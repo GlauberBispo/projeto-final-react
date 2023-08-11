@@ -1,5 +1,7 @@
 .card-img-top {
     border-radius: 0.75rem 0.75rem 0 0;
+    width: 12rem;
+    height: 12rem;
 }
 
 .card {
@@ -68,6 +70,8 @@
     cursor: pointer;
     background-color: var(--primary-green);
     transition: 0.3s;
+    color: var(--white);
+    font-size: 0.8Rem;
 }
 
 .btn-add:hover {

@@ -1,0 +1,100 @@
+.categorias {
+  margin-top: 2rem;
+  z-index: 1;
+  border-right: 1px solid var(--primary-green);
+  height: fit-content;
+  margin-left: 1rem;
+  width: 10%;
+  padding-right: 8rem;
+}
+
+.categorias h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem;
+  color: var(--primary-color);
+  margin: 0;
+  cursor: pointer;
+}
+
+.categorias ul {
+  padding: 0.5rem 1.3rem;
+  list-style: none;
+}
+
+.categorias ul li {
+  margin-bottom: 1rem;
+  
+}
+
+.categorias ul li a {
+  color: var(--black);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+}
+
+.categorias ul li a:hover {
+  color: #a1a1a1;
+}
+
+.catalogo {
+    width: 100%;
+    padding: 3.81rem 0;
+    display: flex;
+    justify-content: center;
+    margin-top: -20rem;
+  }
+
+
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1.75rem;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.pesquisa {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    top: 6.5rem;
+}
+
+.pesquisa input {
+    all: unset;
+    background-color: var(--white);
+    width: 30%;
+    border-radius: 8px;
+    border: 1px solid var(--black)
+}
+
+.pesquisa input::placeholder {
+    text-align: center;
+    color: var(--primary-green);
+}
+
+.btn-pesquisa {
+    all: unset;
+    width: 2rem;
+    height: 1.8rem;
+    color: var(--white);
+    background-color: var(--emphasis-color);
+    border-radius: 4px;
+    text-align: center;
+}
