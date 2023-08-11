@@ -101,6 +101,18 @@
     background-color: var(--primary-green);
 }
 
+.sectionLogin form button:hover{
+    outline: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    background-color: var(--white);
+}
+
 .sectionCadastro form button{
     background-color: var(--emphasis-color);
+}
+
+.sectionCadastro form button:hover{
+    outline: 2px solid var(--emphasis-color);
+    color: var(--emphasis-color);
+    background-color: transparent;
 }
