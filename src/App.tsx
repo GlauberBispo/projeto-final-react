@@ -4,6 +4,7 @@ import Header from './components/header';
 import MenuAreaLogada from './components/menuAreaLogada';
 import Home from './pages/home';
 import Contato from './pages/contato';
+import CadastroUser from './components/cadastroUser';
 import Produtos from './pages/produtos';
 
 function App() {
