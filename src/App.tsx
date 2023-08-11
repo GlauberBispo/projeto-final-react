@@ -4,8 +4,8 @@ import Header from './components/header';
 import MenuAreaLogada from './components/menuAreaLogada';
 import Home from './pages/home';
 import Contato from './pages/contato';
-import CadastroUser from './components/cadastroUser';
 import LoginCadastro from './pages/loginCadastro';
+import Produtos from './pages/produtos';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
   <Routes>
     <Route path='/' element={<Home/>}/>
     <Route path='/contato' element={<Contato/>}/>
-    {/* <Route path='/' element={<Home/>}/>  */}
     <Route path='/loginCadastro' element={<LoginCadastro/>}/>
+    <Route path='/produtos' element={<Produtos />}/>
   </Routes>
   
     <Footer />
