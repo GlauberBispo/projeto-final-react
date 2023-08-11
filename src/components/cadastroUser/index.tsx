@@ -1,3 +1,4 @@
+import UserCircle from '../../assets/UserCircle.svg'
 import { useState } from "react";
 import CadastroForm from "../cadastroHookForm";
 
@@ -23,8 +24,10 @@ const CadastroUser: React.FC = () => {
     }
 
     return(
-        <section>
-            <h2>Cadastro</h2>
+        <section className="sectionCadastro">
+            <img src={UserCircle} alt="Ícone que representa perfil de usuário" />
+            <h2>Não possui uma conta?</h2>
+            <h3>Crie uma aqui</h3>
             <CadastroForm onCreateUser={creatUser}/>
         </section>
     )

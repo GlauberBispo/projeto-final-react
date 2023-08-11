@@ -1,3 +1,4 @@
+import SingIn from '../../assets/SignIn.svg'
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../loginHookForm";
 import React, {useState} from "react";
@@ -23,15 +24,17 @@ const LoginUser: React.FC = () => {
         )
 
         if (foundUser) {
-            navigate('/contato');
+            navigate('/produtos');
         }else{
             alert('Usuario ou senha incorretos')
         }
     }
 
     return (
-        <section>
-            <h2>Login</h2>
+        <section className="sectionLogin">
+            <img src={SingIn} alt="Ícone que representa login" />
+            <h2>Bem-vindo!</h2>
+            <h3>Entre na sua conta</h3>
             <LoginForm onLogin={handleLogin}/>
         </section>
     )

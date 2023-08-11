@@ -28,45 +28,46 @@ const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <label htmlFor="nome">Nome</label>
-                <Controller 
-                name="nome"
-                control={control}
-                render={({field}) => 
-                <input {...field} type="text" placeholder="Digite seu nome completo"
-                value={field.value || ''}/>}
-                rules={{required: true}}
-                />
-                {errors.nome && <p>Este campo é obrigatório</p>}
-            </div>
-            <div>
-                <label htmlFor="user">User</label>
-                <Controller
-                name="user"
-                control={control}
-                render={({field}) => 
-                <input {...field} type="text" placeholder="Digite seu username"
-                value={field.value || ''}
-                />}
-                rules={{required: true}}
-                />
-                {errors.user && <p>Este campo é obrigatório</p>}
-            </div>
-            <div>
-                <label htmlFor="email">Email</label>
-                <Controller
-                name="email"
-                control={control}
-                render={({field}) => 
-                <input {...field} type="email" placeholder="Digite um email válido"
-                value={field.value || ''}
-                />}
-                rules={{required: true, pattern:/^\S+@\S+$/i }}
-                />
-                {errors.email && <p>Este campo é obrigatório</p>}
-            </div>
-            <div>
+            <div className="inputs">
+                <div>
+                    <label htmlFor="nome">Nome</label>
+                    <Controller 
+                    name="nome"
+                    control={control}
+                    render={({field}) => 
+                    <input {...field} type="text" placeholder="Digite seu nome completo"
+                    value={field.value || ''}/>}
+                    rules={{required: true}}
+                    />
+                    {errors.nome && <p>Este campo é obrigatório</p>}
+                </div>
+                <div>
+                    <label htmlFor="user">User</label>
+                    <Controller
+                    name="user"
+                    control={control}
+                    render={({field}) => 
+                    <input {...field} type="text" placeholder="Digite seu username"
+                    value={field.value || ''}
+                    />}
+                    rules={{required: true}}
+                    />
+                    {errors.user && <p>Este campo é obrigatório</p>}
+                </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <Controller
+                    name="email"
+                    control={control}
+                    render={({field}) => 
+                    <input {...field} type="email" placeholder="Digite um email válido"
+                    value={field.value || ''}
+                    />}
+                    rules={{required: true, pattern:/^\S+@\S+$/i }}
+                    />
+                    {errors.email && <p>Este campo é obrigatório</p>}
+                </div>
+                <div>
                 <label htmlFor="senha">Senha</label>
                 <Controller
                 name="senha"
@@ -86,6 +87,7 @@ const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
                 }}}  
                 />
                 {errors.senha && <p>A senha deve conter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais.</p>}
+                </div>
             </div>
             <button type="submit">Criar<i className="ph-light ph-arrow-circle-right"></i></button>
         </form>

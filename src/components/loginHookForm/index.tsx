@@ -20,10 +20,10 @@ const LoginForm: React.FC<LoginFormProps> = ({onLogin}) => {
     }
 
     return(
-        <section>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputs">
                 <div>
-                    <label htmlFor="user">Usuário</label>
+                    <label htmlFor="user">Username/login</label>
                     <Controller
                     name="user"
                     control={control}
@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({onLogin}) => {
                     <input 
                     {...field}
                     type="text"
-                    placeholder="Digite seu usuário"
+                    placeholder="Digite seu username"
                     value={field.value || ""}
                     />
                     )} 
@@ -56,9 +56,9 @@ const LoginForm: React.FC<LoginFormProps> = ({onLogin}) => {
                     />
                     {errors.senha && <p>Este campo é obrigatório</p>}
                 </div>
-                <button type="submit">entrar  <i className="ph-light ph-arrow-circle-right"></i></button>
-            </form>
-        </section>
+            </div>
+            <button type="submit">Entrar  <i className="ph-light ph-arrow-circle-right"></i></button>
+        </form>
     )
 
 }
