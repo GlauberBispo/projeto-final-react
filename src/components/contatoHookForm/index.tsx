@@ -10,15 +10,12 @@ type FormData ={
 }
 
 export default function ContatoHookForm(){
-    const {setValue, control, handleSubmit, formState: {errors}} = useForm<FormData>();
+    const {reset, control, handleSubmit, formState: {errors}} = useForm<FormData>();
     
     const onSubmit = (data: FormData) =>{
         console.log(data);
-        setValue('firstName', ''); 
-        setValue('lastName', '');
-        setValue('email', '');
-        setValue('topic', ''); 
-        setValue('message', '');
+        alert("Mensagem enviada com sucesso!")
+        reset();
     }
     return(
         <div className="divFormContato">
@@ -31,7 +28,8 @@ export default function ContatoHookForm(){
                             name='firstName'
                             control={control}
                             render={({field}) =>(
-                            <input {...field} type='text' placeholder='Nome' />
+                            <input {...field} type='text' placeholder='Nome'
+                            value={field.value || ''} />
                             )}
                             rules={{required: true}}
                         />
@@ -42,7 +40,8 @@ export default function ContatoHookForm(){
                         name='lastName'
                         control={control}
                         render={({field}) => (
-                            <input {...field} type='text' placeholder='Sobrenome' />
+                            <input {...field} type='text' placeholder='Sobrenome'
+                            value={field.value || ''} />
                         )}
                         rules={{required: true}}
                         />
@@ -53,7 +52,8 @@ export default function ContatoHookForm(){
                             name='email'
                             control={control}
                             render={({field}) => (
-                                <input {...field} type='email' placeholder='E-mail' />
+                                <input {...field} type='email' placeholder='E-mail'
+                                value={field.value || ''} />
                             )}
                             rules={{required: true, pattern:/^\S+@\S+$/i }}
                         />
@@ -65,7 +65,8 @@ export default function ContatoHookForm(){
                         name='topic'
                         control={control}
                         render={({field}) => (
-                            <select {...field} defaultValue={''}>
+                            <select {...field} defaultValue={''} 
+                            value={field.value || ''}>
                                 <option value={''} disabled>Selecione um assunto</option>
                                 <option value={'Elogio'}>Elogio</option>
                                 <option value={'Reclamação'}>Reclamação</option>
@@ -82,7 +83,8 @@ export default function ContatoHookForm(){
                         name='message'
                         control={control}
                         render={({field}) => (
-                            <textarea {...field} rows={12} placeholder='Mensagem'></textarea>
+                            <textarea {...field} rows={12} placeholder='Mensagem'
+                            value={field.value || ''}></textarea>
                         )}
                         rules={{required: true}}
                         />
