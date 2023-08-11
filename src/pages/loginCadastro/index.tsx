@@ -1,7 +1,11 @@
 import CadastroUser from "../../components/cadastroUser";
+import LoginUser from "../../components/loginUser";
 
-export default function(){
+export default function LoginCadastro(){
     return(
-        <CadastroUser/>
+        <>
+            <LoginUser />
+            <CadastroUser />
+        </>
     )
 }
