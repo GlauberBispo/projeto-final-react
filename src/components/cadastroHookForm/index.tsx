@@ -25,6 +25,7 @@ const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
         alert('Casatro realizado com sucesso!')
         console.log(data);
         reset();
+        window.location.reload()
     }
 
     return(
