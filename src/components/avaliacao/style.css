@@ -1,0 +1,78 @@
+.form-avaliacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.form-avaliacao1 {
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.form-1 {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
+    width: 100%;
+    padding:1rem;
+    border-radius: 8px;
+}
+
+.form-1 h2 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.avaliacao {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.avaliacao input{
+    width: 90%;
+    border: unset;
+    border-radius: 4px;
+}
+
+.avaliacao inpunt::placeholder {
+    color: var(--primary-green);
+}
+
+.avaliacao textarea {
+    width: 100%;
+    height: 5rem;
+    border: unset;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    font-size: 0.8rem;
+    background-color: var(--emphasis-color);
+    border: unset;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-emphasis-color);
+}
+
+.comments {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.list-avaliacao {
+    list-style: none;
+    max-height: 8rem;
+    overflow-y: scroll;
+}
+
+
+
+
