@@ -6,6 +6,7 @@ import Avaliacao from "../../components/avaliacao";
 import Frete from "../../components/frete";
 import Header from "../../components/header";
 import Menu from "../../components/menu";
+import MenuAreaLogada from "../../components/menuAreaLogada";
 
 interface Produto {
   imageUrl: string;
@@ -122,7 +123,7 @@ export default function Produtos() {
   return (
     <>
      <Header>
-      <Menu/>
+      <MenuAreaLogada/>
     </Header>
       <div className="container-home">
         <aside className="categorias">
