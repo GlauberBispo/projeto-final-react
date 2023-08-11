@@ -8,7 +8,6 @@ interface User{
     user: string;
     email: string;
     senha: string;
-    isLoggedIn:boolean;
 }
 
 const LoginUser: React.FC = () => {

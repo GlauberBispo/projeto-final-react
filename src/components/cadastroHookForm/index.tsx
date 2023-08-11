@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 interface CadastroFormProps{
@@ -7,7 +6,6 @@ interface CadastroFormProps{
         user: string,
         email: string,
         senha: string,
-        isLoggedIn: boolean
     ) => void;
 
 }
@@ -17,15 +15,13 @@ interface FormValues {
     user: string;
     email: string;
     senha: string;
-    isLoggedIn:boolean;
   }
 
 const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
     const {reset, control, handleSubmit, formState:{errors}} = useForm<FormValues>();
-    const [userName, setUserName] = useState('');
     
     const onSubmit = (data: FormValues) => {
-        onCreateUser(data.nome, data.user, data.email, data.senha, data.isLoggedIn);
+        onCreateUser(data.nome, data.user, data.email, data.senha);
         alert('Casatro realizado com sucesso!')
         console.log(data);
         reset();
