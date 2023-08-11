@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './style.css';
-import { data } from '../../data';
-import Card from '../../components/card';
+import React, { useState } from "react";
+import "./style.css";
+import { data } from "../../data";
+import Card from "../../components/card";
+import Avaliacao from "../../components/avaliacao";
+import Frete from "../../components/frete";
 
 interface Produto {
   imageUrl: string;
@@ -17,23 +19,27 @@ interface Categoria {
 
 export default function Produtos() {
   const categorias: Categoria[] = data;
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState<string>('');
-  const [filtro, setFiltro] = useState<string>('');
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState<string>("");
+  const [filtro, setFiltro] = useState<string>("");
 
   const handleCategoriaClick = (categoria: string) => {
     setCategoriaSelecionada(categoria);
   };
 
   const handleTodosProdutosClick = () => {
-    setCategoriaSelecionada('');
+    setCategoriaSelecionada("");
   };
 
   const handleFiltroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFiltro(event.target.value);
   };
 
+  
+
   const produtosFiltrados = categoriaSelecionada
-    ? categorias.find((categoria) => categoria.categoria === categoriaSelecionada)?.produto
+    ? categorias.find(
+        (categoria) => categoria.categoria === categoriaSelecionada
+      )?.produto
     : categorias.flatMap((categoria) => categoria.produto);
 
   const produtosExibidos = filtro
@@ -44,7 +50,7 @@ export default function Produtos() {
 
   return (
     <>
-      <div>
+      <div className="container-home">
         <aside className="categorias">
           <h2 onClick={handleTodosProdutosClick}>Categorias</h2>
           <ul className="lista">
@@ -62,14 +68,14 @@ export default function Produtos() {
         </aside>
 
         <section className="catalogo">
-          <div className='pesquisa'>
+          <div className="pesquisa">
             <input
               type="text"
               placeholder="Digite para buscar produtos"
               value={filtro}
               onChange={handleFiltroChange}
             />
-            <button className='btn-pesquisa'>ir</button>
+            <button className="btn-pesquisa">ir</button>
           </div>
           <div className="cards">
             <div className="produtos">
@@ -84,8 +90,14 @@ export default function Produtos() {
               ))}
             </div>
           </div>
-        </section>
-      </div>
+        </section>     
+        <aside className="form-avaliacao">
+            <div className="form-avaliacao1">
+                <Avaliacao />
+                <Frete />
+            </div>
+        </aside>   
+      </div>      
     </>
   );
 }

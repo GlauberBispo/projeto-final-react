@@ -1,3 +1,9 @@
+.container-home {
+    display: flex;
+    flex-grow: 1fr 4fr 1fr;
+    width: 100%;
+    justify-content: space-between;
+}
 .categorias {
   margin-top: 2rem;
   z-index: 1;
@@ -45,7 +51,7 @@
     padding: 3.81rem 0;
     display: flex;
     justify-content: center;
-    margin-top: -20rem;
+    box-sizing: border-box;
   }
 
 
@@ -55,7 +61,7 @@
   justify-content: center;
   gap: 2rem 1.75rem;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
 }
 
 .produtos {
@@ -81,7 +87,8 @@
     background-color: var(--white);
     width: 30%;
     border-radius: 8px;
-    border: 1px solid var(--black)
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .pesquisa input::placeholder {
@@ -97,4 +104,18 @@
     background-color: var(--emphasis-color);
     border-radius: 4px;
     text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    right: 1;
+    top: 1;    
+}
+
+.form-avaliacao {
+    width: 25rem;
 }

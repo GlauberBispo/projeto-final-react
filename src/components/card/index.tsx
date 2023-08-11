@@ -9,7 +9,7 @@ interface CardProps {
   price: number;
 }
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, subtitle, price }) => (
+const Card: React.FC<CardProps> = ({ imageUrl, title, subtitle, price,} ) => (
   <div className="card">
     <img src={imageUrl} alt={title} className="card-img-top" />
     <div className="card-body">
