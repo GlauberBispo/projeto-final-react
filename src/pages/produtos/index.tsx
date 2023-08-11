@@ -5,7 +5,6 @@ import Card from "../../components/card";
 import Avaliacao from "../../components/avaliacao";
 import Frete from "../../components/frete";
 import Header from "../../components/header";
-import Menu from "../../components/menu";
 import MenuAreaLogada from "../../components/menuAreaLogada";
 
 interface Produto {
