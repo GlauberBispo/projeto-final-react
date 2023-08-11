@@ -34,3 +34,7 @@ a.btnSimple{
 a.btnSimple:hover{
     color: var(--emphasis-color);
 }
+
+.btnSimple i{
+    font-size: 2rem;
+}

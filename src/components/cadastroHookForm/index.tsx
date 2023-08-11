@@ -5,7 +5,8 @@ interface CadastroFormProps{
         name: string,
         user: string,
         email: string,
-        senha: string
+        senha: string,
+        isLoggedIn: boolean
     ) => void;
 
 }
@@ -15,13 +16,14 @@ interface FormValues {
     user: string;
     email: string;
     senha: string;
+    isLoggedIn:boolean;
   }
 
 const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
     const {reset, control, handleSubmit, formState:{errors}} = useForm<FormValues>();
 
     const onSubmit = (data: FormValues) => {
-        onCreateUser(data.nome, data.user, data.email, data.senha);
+        onCreateUser(data.nome, data.user, data.email, data.senha, data.isLoggedIn);
         console.log(data);
         reset();
     }
@@ -88,6 +90,7 @@ const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
                 />
                 {errors.senha && <p>A senha deve conter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais.</p>}
                 </div>
+
             </div>
             <button type="submit">Criar<i className="ph-light ph-arrow-circle-right"></i></button>
         </form>

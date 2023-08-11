@@ -7,13 +7,14 @@ interface User{
     user:string;
     email:string;
     senha:string;
+    isLoggedIn:boolean;
 }
 
 const CadastroUser: React.FC = () => {
     const [usuariosCadastrados, setUsuariosCadastrados] = useState<User[]>([]);
 
     const creatUser = (nome: string, user: string, email:string, senha:string) => {
-        const newUser: User = {nome, user, email, senha};
+        const newUser: User = {nome, user, email, senha,  isLoggedIn:false};
         setUsuariosCadastrados([...usuariosCadastrados, newUser]);
         saveUsersToLocalStorage([...usuariosCadastrados, newUser]);
     }
