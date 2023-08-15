@@ -31,6 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({onLogin}) => {
                     <input 
                     {...field}
                     type="text"
+                    id="user"
                     placeholder="Digite seu username"
                     value={field.value || ""}
                     />
@@ -48,6 +49,7 @@ const LoginForm: React.FC<LoginFormProps> = ({onLogin}) => {
                     <input
                     {...field}
                     type="password"
+                    id="senha"
                     placeholder="Digite sua senha"
                     value={field.value || ''}
                     />

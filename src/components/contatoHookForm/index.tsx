@@ -1,6 +1,10 @@
 import { Controller, useForm } from "react-hook-form";
 import './styleFormContato.css';
 
+interface ContatoHookFormProps {
+    onSubmit: (data: FormData) => void;
+}
+
 type FormData ={
     firstName: string;
     lastName: string;
@@ -9,55 +13,63 @@ type FormData ={
     message: string;
 }
 
-export default function ContatoHookForm(){
+export default function ContatoHookForm({ onSubmit }: ContatoHookFormProps){
     const {reset, control, handleSubmit, formState: {errors}} = useForm<FormData>();
     
-    const onSubmit = (data: FormData) =>{
+    const handleFormSubmit = (data: FormData) => {
+        onSubmit(data); 
         console.log(data);
-        alert("Mensagem enviada com sucesso!")
-        reset();
+        alert("Mensagem enviada com sucesso!");
+        reset(); 
     }
+
     return(
         <div className="divFormContato">
             <section className="sectionFormContato">
             <h2>Nos mande uma mensagem!</h2><br />
             <hr /><br />
-                <form className='FormContato' onSubmit={handleSubmit(onSubmit)}>
+                <form className='FormContato' onSubmit={handleSubmit(handleFormSubmit)}>
                     <div className="formCampo">
                         <Controller
                             name='firstName'
                             control={control}
                             render={({field}) =>(
-                            <input {...field} type='text' placeholder='Nome'
+                            <input {...field} type='text'
+                            data-testid='firstName'
+                            placeholder='Nome'
                             value={field.value || ''} />
                             )}
                             rules={{required: true}}
                         />
-                        {errors.firstName && <p>Este campo é obrigatório</p>}
+                        {errors.firstName && <p>Este campo é obrigatório.</p>}
                     </div>
                     <div className="formCampo">
                         <Controller 
                         name='lastName'
                         control={control}
                         render={({field}) => (
-                            <input {...field} type='text' placeholder='Sobrenome'
+                            <input {...field} type='text'
+                            data-testid='lastName'
+                            placeholder='Sobrenome'
                             value={field.value || ''} />
                         )}
                         rules={{required: true}}
                         />
-                        {errors.lastName && <p>Este campo é obrigatório</p>}
+                        {errors.lastName && <p>Este campo é obrigatório.</p>}
                     </div>
                     <div className="formCampo">
                         <Controller
                             name='email'
                             control={control}
                             render={({field}) => (
-                                <input {...field} type='email' placeholder='E-mail'
+                                <input {...field} type='email' 
+                                data-testid='email'
+                                placeholder='E-mail'
                                 value={field.value || ''} />
                             )}
                             rules={{required: true, pattern:/^\S+@\S+$/i }}
                         />
-                        {errors.email && <p>Insira um e-mail válido.</p>}
+                        {errors.email && <p>Este campo é obrigatório.</p>}
                     </div>
                     <div className="formCampo">
                         <label>Assunto:</label>
@@ -65,7 +77,9 @@ export default function ContatoHookForm(){
                         name='topic'
                         control={control}
                         render={({field}) => (
-                            <select {...field} defaultValue={''} 
+                            <select {...field}
+                            data-testid='topic'
+                            defaultValue={''} 
                             value={field.value || ''}>
                                 <option value={''} disabled>Selecione um assunto</option>
                                 <option value={'Elogio'}>Elogio</option>
@@ -76,14 +90,16 @@ export default function ContatoHookForm(){
                         )}
                         rules={{required: true}}
                         />
-                        {errors.topic && <p>Selecione um assunto.</p>}
+                        {errors.topic && <p>Este campo é obrigatório.</p>}
                     </div>
                     <div className="formCampo">
                         <Controller
                         name='message'
                         control={control}
                         render={({field}) => (
-                            <textarea {...field} rows={12} placeholder='Mensagem'
+                            <textarea {...field} rows={12} 
+                            data-testid='message'
+                            placeholder='Mensagem'
                             value={field.value || ''}></textarea>
                         )}
                         rules={{required: true}}
