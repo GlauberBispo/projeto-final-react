@@ -23,13 +23,13 @@ describe('Produtos Component', () => {
     global.fetch = jest.fn().mockResolvedValue({ json: () => Promise.resolve(mockData) });
   });
 
-  it('renders without errors', () => {
+  test('renders without errors', () => {
     render(<Produtos />, { wrapper: BrowserRouter });
     const categoriasHeading = screen.getByRole('heading', { name: 'Categorias' });
     expect(categoriasHeading).toBeInTheDocument();
   }); 
 
-  it('shows cart when "Carrinho" button is clicked', () => {
+  test('shows cart when "Carrinho" button is clicked', () => {
     render(<Produtos />, { wrapper: BrowserRouter });
 
     const cartButton = screen.getByText('Carrinho (0)');
@@ -39,7 +39,7 @@ describe('Produtos Component', () => {
     expect(cartTitle).toBeInTheDocument();
   });
 
-  it('closes cart when "Fechar Carrinho" button is clicked', async () => {
+  test('closes cart when "Fechar Carrinho" button is clicked', async () => {
     render(<Produtos />, { wrapper: BrowserRouter });
   
     

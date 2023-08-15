@@ -9,7 +9,7 @@ describe('Footer Component', () => {
     expect(footerElement).toBeInTheDocument();
   });
 
-  it('renders product links correctly', () => {
+  test('renders product links correctly', () => {
     render(<Footer />);
     const camisetaLink = screen.getByText('Camiseta');
     const ecobagLink = screen.getByText('Ecobag');
@@ -22,7 +22,7 @@ describe('Footer Component', () => {
     expect(canecaLink).toBeInTheDocument();
   });
 
-  it('renders copyright and company information', () => {
+  test('renders copyright and company information', () => {
     render(<Footer />);
     const copyrightText = screen.getByText('Copyright © EcoViva');
     const cnpjText = screen.getByText('EcoViva, CNPJ XX.XXX.XXX/XXXX-XX');
