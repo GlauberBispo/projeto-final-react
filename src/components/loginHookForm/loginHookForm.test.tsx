@@ -2,7 +2,7 @@ import { render, screen, waitFor} from '@testing-library/react';
 import LoginForm from './index'; 
 import userEvent from '@testing-library/user-event';
 
-describe('CadastroForm Component', () => {
+describe('LoginForm Component', () => {
 
     const loginUser = jest.fn();
 
@@ -25,7 +25,7 @@ describe('CadastroForm Component', () => {
     expect(await screen.findAllByText('Este campo é obrigatório')).toBeTruthy();
   })
 
-  test('calls loginUser with correct data on from submission', async () => {
+  test('calls login User with correct data on from submission', async () => {
 
     render(<LoginForm  onLogin={loginUser}/>);
 

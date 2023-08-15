@@ -22,7 +22,7 @@ const CadastroForm:React.FC<CadastroFormProps> = ({onCreateUser}) => {
     
     const onSubmit = (data: FormValues) => {
         onCreateUser(data.nome, data.user, data.email, data.senha);
-        alert('Casatro realizado com sucesso!')
+        alert('Cadastro realizado com sucesso!')
         console.log(data);
         reset();
         window.location.reload()
