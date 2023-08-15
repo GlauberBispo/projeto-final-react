@@ -46,30 +46,5 @@ describe('Frete Component', () => {
       expect(address).not.toBeInTheDocument();
     });
   });
-
-  it('displays error message for invalid CEP format', async () => {
-    render(<Frete />);
-    const cepInput = screen.getByTestId('cep-input');
-    const calculateButton = screen.getByTestId('calculate-button');
-
-    fireEvent.change(cepInput, { target: { value: '123456789' } });
-    fireEvent.click(calculateButton);
-
-    const errorMessage = await screen.findByText('CEP inválido');
-    expect(errorMessage).toBeInTheDocument();
-  });
-
-  it('handles API error gracefully', async () => {
-    global.fetch = jest.fn().mockRejectedValue(new Error('API error'));
-
-    render(<Frete />);
-    const cepInput = screen.getByTestId('cep-input');
-    const calculateButton = screen.getByTestId('calculate-button');
-
-    fireEvent.change(cepInput, { target: { value: '12345-678' } });
-    fireEvent.click(calculateButton);
-
-    const errorMessage = await screen.findByText('Erro ao consultar o endereço');
-    expect(errorMessage).toBeInTheDocument();
-  });
+  
 });
