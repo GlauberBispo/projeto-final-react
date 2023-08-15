@@ -39,6 +39,7 @@ const Avaliacao: React.FC = () => {
         <div className='avaliacao'>
           <label htmlFor="nome">Nome:</label>
           <input
+            data-testid="name-input"
             type="text"
             id="nome"
             placeholder='Ex: João'
@@ -48,11 +49,12 @@ const Avaliacao: React.FC = () => {
         <div className='avaliacao'>
           <label htmlFor="comentario">Comentário:</label>
           <textarea
+            data-testid="comentario-text"
             id="comentario"
             {...register('comentario', { required: true })}
           />
         </div>
-        <button className='btn btn-primary' type="submit">Enviar Comentário</button>
+        <button className='btn btn-primary' data-testid="enviar-btn" type="submit">Enviar Comentário</button>
       </form>
 
       {comentarios.length > 0 && (

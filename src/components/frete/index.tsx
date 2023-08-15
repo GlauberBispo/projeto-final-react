@@ -62,24 +62,24 @@ const Frete: React.FC = () => {
           <Controller
             name="cep"
             control={control}
-            render={({ field }) => <input placeholder='Ex: 00.000-000 ou 00000000' {...field} />}
+            render={({ field }) => <input data-testid="cep-input" placeholder='Ex: 00.000-000 ou 00000000' {...field} />}
             rules={{ required: true, pattern: /\d{5}-?\d{3}/ }}
           />
         </div>
         <div className='botoes'>
-          <button className='btn btn-primary' type="submit">Calcular CEP</button>
-          <button className='btn btn-primary' type="button" onClick={resetForm}>
+          <button className='btn btn-primary' type="submit" data-testid="calculate-button">Calcular CEP</button>
+          <button className='btn btn-primary' type="button" onClick={resetForm} data-testid="clear-button">
             Limpar
           </button>
         </div>
       </form>
       {freteValue !== null && (
         <div>
-          <p>Valor do Frete: R$ {freteValue.toFixed(2)}</p>
+          <p data-testid="frete-value">Valor do Frete: R$ {freteValue.toFixed(2)}</p>
         </div>
       )}
       {address && (
-        <div className='address'>
+        <div className='address' data-testid="address">
           <h3>Endereço:</h3>
           <p>CEP: {address.cep}</p>
           <p>Logradouro: {address.logradouro}</p>
