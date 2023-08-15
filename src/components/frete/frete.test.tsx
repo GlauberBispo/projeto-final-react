@@ -4,13 +4,13 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import Frete from './index';
 
 describe('Frete Component', () => {
-  it('renders without errors', () => {
+  test('renders without errors', () => {
     render(<Frete />);
     const headerElement = screen.getByText('Calcular Frete');
     expect(headerElement).toBeInTheDocument();
   });
 
-  it('calculates and displays the freight value and address on submit', async () => {
+  test('calculates and displays the freight value and address on submit', async () => {
     render(<Frete />);
     const cepInput = screen.getByTestId('cep-input');
     const calculateButton = screen.getByTestId('calculate-button');
@@ -27,7 +27,7 @@ describe('Frete Component', () => {
     });
   });
 
-  it('clears the form and results on clear button click', async () => {
+  test('clears the form and results on clear button click', async () => {
     render(<Frete />);
     const cepInput = screen.getByTestId('cep-input');
     const calculateButton = screen.getByTestId('calculate-button');

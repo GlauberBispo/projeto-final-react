@@ -3,13 +3,13 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import Avaliacao from './index';
 
 describe('Avaliacao Component', () => {
-  it('renders without errors', () => {
+  test('renders without errors', () => {
     render(<Avaliacao />);
     const headerElement = screen.getByText('Nos avalie');
     expect(headerElement).toBeInTheDocument();
   });
 
-  it('allows submitting a comment', async () => {
+  test('allows submitting a comment', async () => {
     render(<Avaliacao />);
     const nameInput = screen.getByTestId('name-input');
     const commentInput = screen.getByTestId('comentario-text');
