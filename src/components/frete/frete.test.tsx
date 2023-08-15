@@ -1,17 +1,75 @@
+/* eslint-disable testing-library/no-wait-for-multiple-assertions */
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import Frete from './index'; // Adjust the import path as needed
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import Frete from './index';
 
 describe('Frete Component', () => {
-  test('renders without errors', () => {
+  it('renders without errors', () => {
     render(<Frete />);
+    const headerElement = screen.getByText('Calcular Frete');
+    expect(headerElement).toBeInTheDocument();
+  });
 
-    const sectionTitle = screen.getByText("Calcular Frete");
+  it('calculates and displays the freight value and address on submit', async () => {
+    render(<Frete />);
+    const cepInput = screen.getByTestId('cep-input');
+    const calculateButton = screen.getByTestId('calculate-button');
 
-    expect(sectionTitle).toBeInTheDocument();
-  });  
+    fireEvent.change(cepInput, { target: { value: '12345-678' } });
+    fireEvent.click(calculateButton);
 
- 
+    await waitFor(() => {
+      const freteValue = screen.getByTestId('frete-value');
+      expect(freteValue).toBeInTheDocument();
 
+      const address = screen.getByTestId('address');
+      expect(address).toBeInTheDocument();
+    });
+  });
+
+  it('clears the form and results on clear button click', async () => {
+    render(<Frete />);
+    const cepInput = screen.getByTestId('cep-input');
+    const calculateButton = screen.getByTestId('calculate-button');
+    const clearButton = screen.getByTestId('clear-button');
+
+    fireEvent.change(cepInput, { target: { value: '12345-678' } });
+    fireEvent.click(calculateButton);
+
+    await waitFor(() => {
+      // eslint-disable-next-line testing-library/no-wait-for-side-effects
+      fireEvent.click(clearButton);
+      const freteValue = screen.queryByTestId('frete-value');
+      expect(freteValue).not.toBeInTheDocument();
+
+      const address = screen.queryByTestId('address');
+      expect(address).not.toBeInTheDocument();
+    });
+  });
+
+  it('displays error message for invalid CEP format', async () => {
+    render(<Frete />);
+    const cepInput = screen.getByTestId('cep-input');
+    const calculateButton = screen.getByTestId('calculate-button');
+
+    fireEvent.change(cepInput, { target: { value: '123456789' } });
+    fireEvent.click(calculateButton);
+
+    const errorMessage = await screen.findByText('CEP inválido');
+    expect(errorMessage).toBeInTheDocument();
+  });
+
+  it('handles API error gracefully', async () => {
+    global.fetch = jest.fn().mockRejectedValue(new Error('API error'));
+
+    render(<Frete />);
+    const cepInput = screen.getByTestId('cep-input');
+    const calculateButton = screen.getByTestId('calculate-button');
+
+    fireEvent.change(cepInput, { target: { value: '12345-678' } });
+    fireEvent.click(calculateButton);
+
+    const errorMessage = await screen.findByText('Erro ao consultar o endereço');
+    expect(errorMessage).toBeInTheDocument();
+  });
 });

@@ -43,7 +43,7 @@ const Avaliacao: React.FC = () => {
             type="text"
             id="nome"
             placeholder='Ex: João'
-            {...register('nome', { required: true })}
+            {...register('nome', { required: 'Nome é necessário' })}
           />
         </div>
         <div className='avaliacao'>
@@ -51,7 +51,7 @@ const Avaliacao: React.FC = () => {
           <textarea
             data-testid="comentario-text"
             id="comentario"
-            {...register('comentario', { required: true })}
+            {...register('comentario', { required: 'Comentário é necessário' })}
           />
         </div>
         <button className='btn btn-primary' data-testid="enviar-btn" type="submit">Enviar Comentário</button>
