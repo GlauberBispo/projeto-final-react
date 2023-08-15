@@ -1,3 +1,13 @@
+# Projeto final Testes Unitarios
+
+
+<h3>Percentual de cobertura >= 60%:</h3>
+
+<img src="./public/testes.png"/>
+
+
+
+
 # Projeto final React
 
 Link vercel [Clique Aqui](https://projeto-final-react-amber.vercel.app/)

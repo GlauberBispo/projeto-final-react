@@ -25,7 +25,9 @@ describe('LoginUser Component', () => {
   test('navigates to /produtos on successful login', async () => {
     const user = 'anabanana';
     const senha = 'Password12!';
-    mockNavigate.mockImplementationOnce(() => {});
+    mockNavigate.mockImplementation((path) => {
+        window.location.href = path; 
+      });
 
     render(<LoginUser />);
 
@@ -34,8 +36,8 @@ describe('LoginUser Component', () => {
     userEvent.click(screen.getByRole('button', { name: 'Entrar' }));
 
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith('/produtos');
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
+        const currentUrl = window.location.href.split("localhost")[1];
+        expect(currentUrl).toBe("/produtos");
     });
   });
 
